@@ -159,9 +159,13 @@ if (isset($_FILES['file'])) {
 
                 $result = '';
                 //system("curl --user SIT_Provident:SIT_Provident -H 'Content-Type: text/xml; charset=utf-8' --verbose -H 'SOAPAction:' -d '" . $xml . "' -X POST 'http://90.131.20.228:3401/ws/TIP_DeliverService_v01_NP_Provident.request.v01.webService:handleAsyncResponse' 2>uploads/errorlog.txt");
-                exec("curl --user SIT_Provident:SIT_Provident -H 'Content-Type: text/xml; charset=utf-8' --verbose -H 'SOAPAction:' -d '" . $xml . "' -X POST 'http://90.131.20.228:3401/ws/TIP_DeliverService_v01_NP_Provident.request.v01.webService:handleAsyncResponse' 2>>uploads/errorlog.txt", $result, $returnCode);
-                echo "<pre>";
-                print_r($result);
+                exec("curl --user SIT_Provident:SIT_Provident -H 'Content-Type: text/xml; charset=utf-8' --verbose -H 'SOAPAction:' -d '" . $xml . "' -X POST 'http://90.131.20.228:3401/ws/TIP_DeliverService_v01_NP_Provident.request.v01.webService:handleAsyncResponse'", $result, $returnCode);
+                //echo "<pre>";
+                //print_r($result);
+                var_dump($result);
+
+                $response = simplexml_load_string($result[0]);
+                print_r($response);
             }
 
         }
