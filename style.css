@@ -8,10 +8,16 @@
 }
 
 body {
-    font-family: Lato, Arial;
+    font-family: Lato;
     color: #fff;
     padding: 55px 25px;
     background-color: #e74c3c;
+}
+
+#content {
+    margin: auto;
+    margin-top: 250px;
+    width: 900px;
 }
 
 h1 {
@@ -24,6 +30,13 @@ h1 span {
     font-size: 13px;
     display: block;
     padding-left: 4px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 100px;
 }
 
 p {
@@ -69,7 +82,7 @@ p a:hover {
     margin-bottom: 5px;
 }
 
-.file-upload-input {
+.file-upload-input, .results .response {
     width: 300px;
     color: #fff;
     font-size: 16px;
@@ -88,7 +101,7 @@ p a:hover {
     outline: none;
 }
 
-.file-upload-button {
+.file-upload-button, .submitForm {
     cursor: pointer;
     display: inline-block;
     color: #fff;
@@ -105,6 +118,138 @@ p a:hover {
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
+    .submitForm {
+        margin-left: 70px;
+    }
+
 .file-upload-button:hover {
     background-color: #6d2018;
 }
+ul#progress {
+    list-style: none;
+    width: 125px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+ul#progress li {
+    /* Style your list */
+    float: left;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #e74c3c;
+    border-radius: 50px;
+    margin-left: 10px;
+    border-left: 1px solid #e74c3c;
+    border-top: 1px solid #e74c3c;
+    border-right: 1px solid #e74c3c;
+    border-bottom: 1px solid #e74c3c;
+    background: #962d22;
+}
+
+ul#progress li:first-child {
+    margin-left: 0;
+} /* Remove the margin first li element */
+
+.spinner {
+    margin-top: 50px;
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    font-size: 10px;
+}
+
+    .spinner > div {
+        background-color: #fff;
+        height: 100%;
+        width: 6px;
+        display: inline-block;
+
+        -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+        animation: stretchdelay 1.2s infinite ease-in-out;
+    }
+
+    .spinner .rect2 {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+    }
+    .spinner .rect3 {
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
+    }
+    .spinner .rect4 {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+    }
+    .spinner .rect5 {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+    }
+    .spinner .rect6 {
+        -webkit-animation-delay: -0.7s;
+        animation-delay: -0.7s;
+    }
+    .spinner .rect7 {
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+    }
+    .spinner .rect8 {
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+    }
+    .spinner .rect9 {
+        -webkit-animation-delay: -0.4s;
+        animation-delay: -0.4s;
+    }
+    .spinner .rect10 {
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+    }
+
+
+    @-webkit-keyframes stretchdelay {
+        0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+        20% { -webkit-transform: scaleY(1.0) }
+    }
+
+    @keyframes stretchdelay {
+        0%, 40%, 100% {
+            transform: scaleY(0.4);
+            -webkit-transform: scaleY(0.4);
+        }  20% {
+               transform: scaleY(1.0);
+               -webkit-transform: scaleY(1.0);
+           }
+    }
+
+.results {
+    float: right;
+    position: absolute;
+    top: 305px;
+    left: 1200px;
+    display: block;
+}
+
+    .results .response {
+        margin-top: 40px;
+        min-height: 150px;
+    }
+
+        .results .response ul {
+            list-style-type: none;
+        }
+
+        .results .response li {
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+        .results .response ul li.success {
+            background: rgba(28,224,145,.7);
+         }
+
+        .results .response ul li.error {
+            background: rgba(231,77,60,.7);
+        }
