@@ -7,16 +7,26 @@
 
     <title>Provident responses retry service</title>
 
-    <link rel="stylesheet" type="text/css" href="css/responses.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 </head>
 
 <body>
+<!--
 <form action="" method="POST" enctype="multipart/form-data">
     <input type="file" name="file"/>
     <input type="submit"/>
 </form>
+-->
+
+<h1>Provident responses retry <span><strong>using ServiceOrderID</strong></span></h1>
+
+<div class="custom-file-upload">
+    <!--<label for="file">File: </label>-->
+    <input type="file" id="file" name="file" />
+</div>
+
 </body>
 
 <?php
@@ -179,10 +189,9 @@ if (isset($_FILES['file'])) {
         }
 
 
-
+        header('location: index.php');
 
         //SEND RESPONSE TO TIP
-
 
         //echo phpinfo();
 
@@ -191,5 +200,5 @@ if (isset($_FILES['file'])) {
         print_r($errors);
     }
 }
-//header('location: responses.php');
+
 ?>
