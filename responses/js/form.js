@@ -138,7 +138,7 @@ $('div.submitForm').on('click', function() {
         form_data.append('file', file_data);
 
         $.ajax({
-                url: './upload.php',
+                url: './wp-content/themes/monitor/responses/upload.php',
                 type: 'POST',
                 contentType: false,
                 processData: false,

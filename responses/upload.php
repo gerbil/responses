@@ -161,9 +161,6 @@ if (isset($_FILES['file'])) {
 
         }
 
-
-        //header('location: index.php');
-
         //SEND RESPONSE TO TIP
 
         //echo phpinfo();
